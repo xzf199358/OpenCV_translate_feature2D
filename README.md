@@ -33,9 +33,11 @@ $$  E(u,v) \approx \sum_{x,y}[I(x,y) + uI_x + vI_y - I(x,y)  ]^2$$
 - 展开方程：<br/>
 $$  E(u,v) \approx \sum_{x,y}u^2I_x^2 + 2uvI_xI_y + v^2I_y^2 $$
 可以用矩阵形式表示为：
-$$  E(u,v) \approx  [u ~ v]    \left (   \sum_{x,y} w(x,y)    \left[ \begin{matrix}    I_x^2 & I_xI_y \\   I_xI_y & I_y^2  \end{matrix}  \right]  \right)  \left[\begin{matrix}  u \\  v \end{matrix} \right]$$
+$$  E(u,v) \approx  [u ~ v]    \left (   \sum_{x,y} w(x,y)    \left[ \begin{matrix}    I_x^2 & I_xI_y \\  
+I_xI_y & I_y^2  \end{matrix}  \right]  \right)  \left[\begin{matrix}  u \\  v \end{matrix} \right]$$
 - 我们来表示：
- $$ M = \sum_{x,y}w(x,y)\left[ \begin{matrix}    I_x^2 & I_xI_y \\   I_xI_y & I_y^2  \end{matrix}  \right]$$
+ $$ M = \sum_{x,y}w(x,y)\left[ \begin{matrix}    I_x^2 & I_xI_y \\ 
+ I_xI_y & I_y^2  \end{matrix}  \right]$$
  - 所以，我们现在的方程式是：<br/>
   $$  E(u,v)   \approx  [u ~ v]M \left[\begin{matrix}  u \\  v \end{matrix} \right]$$
   - 为每个窗口计算分数，以确定它是否可能包含角点：

@@ -7,9 +7,9 @@ this repository will show the  translation of opencv official word  that includi
 使用函数cv::cornerHarris使用Harris-Stephens方法检测角点。
 ## 理论
 ### 什么是特征？
-&emsp;在计算机视觉中，通常需要在环境的不同帧之间找到匹配点。为什么？如果我们知道两个图像是如何相互关联的，我们可以使用这两个图像来提取它们的信息。
-&emsp;当我们说匹配点时，一般来说，我们指的是场景中容易识别的特征。我们称这些特征为特征。
-&emsp;那么，一个特征应该具有哪些特征呢？它必须是唯一可识别的。
+&emsp;在计算机视觉中，通常需要在环境的不同帧之间寻找匹配点。为什么？如果我们知道两个图像是如何相互关联的，那么我们可以使用这两个图像来提取它们之间信息。
+&emsp;当我们说匹配点时，一般来说，指的是场景中容易识别的特征，我们称之为特征。
+&emsp;那么，一个图像特征应该具有哪些特征呢？它必须是唯一可识别的。
 ## 图像特征类型
 举几个例子：</br>
   -  边缘</br>
@@ -26,7 +26,7 @@ $$  E(x,y) = \sum_{x,y}w(x,y)[I(x+u,y+v)−I(x,y)]^2$$
 - $w(x,y)$ 表示在窗口中的位置$(x,y)$。
 - $I(x,y)$表示在 $(x,y)$位置的灰度值。
 - $I(x+u，y+v)$表示滑动窗口$(x+u，y+v)$处的强度。<br/>
-因为我们要找有角点的窗口，所以我们要找强度变化较大的窗口。因此，我们必须最大化上述等式，特别是术语:</br>
+因为我们要找有角点的窗口，所以我们要找强度变化较大的窗口。因此，我们必须使得上述等式最大化，具体来说:</br>
 $$\sum_{x,y}w(x,y)[I(x+u,y+v)−I(x,y)]^2$$
 - 使用泰勒表达式展开：<br>
 $$  E(u,v) \approx \sum_{x,y}[I(x,y) + uI_x + vI_y - I(x,y)  ]^2$$
@@ -40,7 +40,7 @@ I_xI_y & I_y^2  \end{matrix}  \right]  \right)  \left[\begin{matrix}  u \\  v \e
  I_xI_y & I_y^2  \end{matrix}  \right]$$
  - 所以，我们现在的方程式是：<br/>
   $$  E(u,v)   \approx  [u ~ v]M \left[\begin{matrix}  u \\  v \end{matrix} \right]$$
-  - 为每个窗口计算分数，以确定它是否可能包含角点：
+  - 为每个窗口计算分数，确定它是否可能包含角点：
   $$R=det(M)−k(trace(M))^2$$
   其中：
 
@@ -105,7 +105,7 @@ void cornerHarris_demo( int, void* )
 <!-- more -->
 <!-- more -->
 ## 解释
-### 结果
+### 结果显示
 原始图像：</br>
 ![](file://C:/Users/yee/Documents/Gridea/post-images/1585153255589.JPG)
 检测到的角被一个黑色的小圆圈包围。</br>

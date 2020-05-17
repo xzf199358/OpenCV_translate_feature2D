@@ -18,7 +18,7 @@ this repository will show the  translation of opencv official word  that includi
 在本教程中，我们将特别研究角点特征。
 ## 为什么角点这么特别？
 &emsp;因为它是两条边的交集,它表示这两条边的方向改变的点。因此，图像的梯度（在两个方向上）有很大的变化，可以用来检测它。
-## 它是如何工作的？
+## 它是如何s的？
 &emsp;我们寻找一个角点，由于角点代表图像中渐变的变化，我们将寻找这种“变化”。</br>
 考虑一个灰度图像$(I)$。我们将扫描一个窗口$w(x，y)$,(位移u在x方向，v在y方向)$I$并计算强度的变化。<br/>
 $$  E(x,y) = \sum_{x,y}w(x,y)[I(x+u,y+v)−I(x,y)]^2$$
@@ -108,5 +108,5 @@ void cornerHarris_demo( int, void* )
 ### 结果显示
 原始图像：</br>
 ![](file://C:/Users/yee/Documents/Gridea/post-images/1585153255589.JPG)
-检测到的角被一个黑色的小圆圈包围。</br>
+检测到的角点被一个黑色的小圆圈包围。</br>
 ![](file://C:/Users/yee/Documents/Gridea/post-images/1585153274034.JPG)
